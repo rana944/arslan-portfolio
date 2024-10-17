@@ -1,5 +1,5 @@
 import './App.css'
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import github from './assets/github.svg'
 import linkedIn from './assets/linkedin.svg'
 import facebook from './assets/facebook.svg'
