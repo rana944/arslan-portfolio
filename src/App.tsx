@@ -63,7 +63,7 @@ function App() {
                 <li className='text-center font-semibold sm:text-sm md:text-2xl lg:text-4xl'>React Native App Development</li>
               </div>
             </div>
-            <div className='grid grid-cols-3 place-items-center'>
+            <div className='grid grid-cols-3 place-items-center mb-4'>
               <a href='http://github.com/rana944'>
                 <img src={github} className='w-10 h-10' />
               </a>
