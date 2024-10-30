@@ -8,10 +8,14 @@ export default {
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
-        nunito: ['Nunito Sans', 'sans-serif']
+        nunito: ['Nunito', 'sans-serif'],
+        abhaya: ['AbhayaLibre', 'libre'],
+        nunitosans: ['Nunito Sans', 'sans-serif'],
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-safe-area")
+  ],
 }
 

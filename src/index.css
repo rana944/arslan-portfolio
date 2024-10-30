@@ -12,7 +12,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(#433A4A, #494645);
+  background: #EDE7E5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -71,8 +71,6 @@ button:focus-visible {
   width: 20vw;
   height: 20vw;
   object-fit: cover;
-  border: 1px solid #D0CDCD;
-  background: linear-gradient(180deg, #D0CDCD 30%, #433A4A 100%);
 }
 
 .icon {
