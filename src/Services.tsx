@@ -1,9 +1,7 @@
 import Project1 from "./assets/project-1.png";
 import Project2 from "./assets/project-2.png";
-import Project3 from "./assets/project-3.png";
 import Project1_1 from "./assets/project-1_1.png";
 import Project2_1 from "./assets/project-2_1.png";
-import Project3_1 from "./assets/project-3_1.png";
 import BackButton from "./assets/back-button.png";
 import { useMediaQuery } from "react-responsive";
 import MenuIcon from "./assets/menu-icon.svg";

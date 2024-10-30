@@ -1,5 +1,5 @@
 import './App.css'
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import profilePicture from './assets/profilePicture.png'
 import profilePictureTransparentBg from './assets/profilePictureTransparentBg.png'
@@ -7,8 +7,7 @@ import profilePictureTransparentBg from './assets/profilePictureTransparentBg.pn
 import homePicture1 from './assets/home-image-1.png'
 import homePicture2 from './assets/home-image-2.png'
 import backButton from './assets/back-button.png';
-import { animated, useScroll, useSpring } from 'react-spring'
-import { useGesture } from '@use-gesture/react'
+import { animated, useScroll } from 'react-spring';
 import { Link } from 'react-router-dom'
 import MenuNavigation from './MenuNavigation'
 import { setBlur } from './utils'
@@ -53,39 +52,11 @@ function App() {
     } */
   });
 
-  const handleScroll = (e: any) => {
-    const { scrollTop, scrollHeight, clientHeight } = e.target;
-    const position = Math.ceil(
-      (scrollTop / (scrollHeight - clientHeight)) * 100
-    );
-  };
-
   const sizeBasedOnScrollY = scrollValue.scrollY.to(
     scrollP => {
       return clamp(120 - scrollP, AVATAR_SIZE - 20, 120)
     }
   );
-
-  const stickyAnimatedHeaderStyle = {
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1,
-    width: '105%',
-    position: 'absolute',
-    background: '#985151',
-    /* height: scrollValue.scrollY.to(
-      scrollP => {
-        return clamp(scrollP, 0, 70)
-      },
-    ), */
-    height: AVATAR_SIZE,
-    opacity: scrollValue.scrollY.to(
-      scrollP => {
-        return interpolate(scrollP, [0, AVATAR_SIZE], [0, 1])
-      }
-    ),
-  }
 
   return (
     <animated.div className='m-0 p-0 grid w-screen h-screen content-between overflow-auto'>
@@ -165,8 +136,22 @@ function App() {
       {
         !(isDesktopOrLaptop || isBigScreen) && (
           <Fragment>
-            <animated.div id={"sidebar-content"} onScroll={handleScroll} ref={containerRef} className='pt-safe overflow-x-hidden'>
-              <animated.div style={stickyAnimatedHeaderStyle} />
+            <animated.div id={"sidebar-content"} ref={containerRef} className='pt-safe overflow-x-hidden'>
+              <animated.div style={{
+                top: 0,
+                left: 0,
+                right: 0,
+                zIndex: 1,
+                width: '105%',
+                position: 'absolute',
+                background: '#985151',
+                height: AVATAR_SIZE,
+                opacity: scrollValue.scrollY.to(
+                  scrollP => {
+                    return interpolate(scrollP, [0, AVATAR_SIZE], [0, 1])
+                  }
+                ),
+              }} />
               <div>
                 <animated.svg width="500" height="400" viewBox="140 550 500 500" fill="none" xmlns="http://www.w3.org/2000/svg"
                   style={{

@@ -1,20 +1,10 @@
 import { createPortal } from "react-dom";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { setBlur } from "./utils";
 
 interface IProps {
     isOpen?: boolean;
     setOpen: (val: boolean) => void;
-}
-
-const mainContainerStyle = {
-    position: "absolute",
-    left: 0,
-    top: 0,
-    height: "100%",
-    width: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    zIndex: 1000
 }
 
 const MenuNavigation = (props: IProps) => {
